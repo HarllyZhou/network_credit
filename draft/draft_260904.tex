@@ -62,7 +62,9 @@
 
 \title{Production Networks and Formation of Aggregate Uncertainty}
 \author{
-Harlly Zhou\footnotemark[1]\\\texttt{hzhouci@ust.hk}
+Xinyu Wei\footnotemark[1]\\\texttt{TBA}
+\and
+Harlly Zhou\footnotemark[2]\\\texttt{hzhouci@ust.hk}
 }
 \date{\today}
 
@@ -70,14 +72,17 @@ Harlly Zhou\footnotemark[1]\\\texttt{hzhouci@ust.hk}
 
 \begin{titlepage}
     \begin{center}
-        {\LARGE\bfseries Uncertainty, Production Networks, and Financial Cycles\par}
+        {\LARGE\bfseries Credit Cycles in Production Networks: How Uncertainty Shocks Travel\par}
         \vspace{1.5em}
         {\large
-        Harlly Zhou\footnotemark[1] (\texttt{hzhouci@ust.hk})\\
+        Xinyu Wei\footnotemark[1] (\texttt{TBA})\\
+        Harlly Zhou\footnotemark[2] (\texttt{hzhouci@ust.hk})\\
         }
         \vspace{1em}
         \today
     \end{center}
+    \footnotetext[1]{Department of Economics, University of Rochester.}
+    \footnotetext[2]{Department of Economics, Hong Kong University of Science and Technology.}
     \vspace{2em}
     \begin{abstract}
         \sloppy
@@ -99,7 +104,7 @@ Harlly Zhou\footnotemark[1]\\\texttt{hzhouci@ust.hk}
 \subsection{Model Setup}
 \subsubsection{Sectors and Firms}
 
-Consider a closed-economy with $N$ industries, indexed by $i=1,\cdots,N$. Each industry has a representative firm that produces a differentiated good $y_{i,t}$ using capital $k_{i,t}$, labor $n_{i,t}$, and intermediate inputs from industry $j$, $\{x_{ij,t}\}_{j=1}^{N}$. The production function is given by
+Consider a closed economy with $N$ industries, indexed by $i=1,\cdots,N$. Each industry has a representative firm that produces a differentiated good $y_{i,t}$ using capital $k_{i,t}$, labor $n_{i,t}$, and intermediate inputs from other industries, $\{x_{ij,t}\}_{j=1}^{N}$. The production function is
 \begin{align}\label{eq:prod_func}
     y_{i,t}
     =
@@ -119,15 +124,15 @@ Capital evolves according to
     k_{i,t+1}
     = (1-\delta) \underbrace{\xi_{i,t} k_{i,t}}_{\equiv \tilde{k}_{i,t+1}} + i_{i,t+1},
 \end{align}
-where $\delta$ is the physical capital depreciation rate, $i_{i,t+1}$ is investment, and $\xi_{i,t}\in[0,1]$ is the remaining proportion of physical capital inherited from the previous period after liquidation. The timing is such that investment is chosen before productivity is realized. For the benchmark, we assume that there is no adjustment cost for investment.
+where $\delta$ is the physical capital depreciation rate, $i_{i,t+1}$ is investment, and $\xi_{i,t}\in[0,1]$ is the proportion of physical capital inherited from the previous period after liquidation. Investment is chosen before productivity is realized. In the benchmark model, investment is not subject to adjustment costs.
 
-The stochastic productivity process is an $AR(1)$ process:
+Productivity follows an $AR(1)$ process:
 \begin{align}\label{eq:productivity_process}
     \log z_{i,t}
     = \rho^z_{i} \log z_{i,t-1}
     +\sigma_{i,t}\epsilon^z_{i,t},
 \end{align}
-where $\rho^z_{i}\in(0,1)$ is the persistence of productivity. $\sigma_{i,t}^2$ is the innovation variance, and $\epsilon^z_{i,t}$ is the productivity innovation. Denote $\boldsymbol \sigma_t = (\sigma_{1,t},\ldots,\sigma_{N,t})'\in \mathbb{R}^N$. Suppose that the innovation variance of each sector moves over time according to an $AR(1)$ process: 
+where $\rho^z_{i}\in(0,1)$ is the persistence of productivity, $\sigma_{i,t}^2$ is the innovation variance, and $\epsilon^z_{i,t}$ is the productivity innovation. Let $\boldsymbol \sigma_t = (\sigma_{1,t},\ldots,\sigma_{N,t})'\in \mathbb{R}^N$. The innovation variance in each sector evolves according to
 \begin{align}\label{eq:innovation_variance_process}
     \log \sigma_{i,t} = \rho^\sigma_{i} \log \sigma_{i,t-1} + \epsilon^\sigma_{i,t},
 \end{align}
@@ -148,13 +153,13 @@ where $\rho^\sigma_{i}\in(0,1)$ is the persistence of the innovation variance. L
     \sim
     \mathcal N(\mathbf 0, \mathbf{\Sigma^\sigma}),
 \end{align*}
-where $\mathbf{I_N}$ is the $N\times N$ identity matrix and $\mathbf{\Sigma^\sigma}$ is the $N\times N$ variance-covariance matrix. For each $i$, $\epsilon^z_{i,t}$ and $\epsilon^\sigma_{i,t}$ have mean zero and unit variance. $\epsilon^\sigma_{i,t}$ realizes together with the innovation variance $\sigma_{i,t}$ and $\epsilon^z_{i,t}$ realizes together with the productivity $z_{i,t}$.
+where $\mathbf{I_N}$ is the $N\times N$ identity matrix and $\mathbf{\Sigma^\sigma}$ is the $N\times N$ variance-covariance matrix. For each $i$, $\epsilon^z_{i,t}$ and $\epsilon^\sigma_{i,t}$ have mean zero and unit variance. The uncertainty shock $\epsilon^\sigma_{i,t}$ is realized with the innovation variance $\sigma_{i,t}$, while the productivity shock $\epsilon^z_{i,t}$ is realized with productivity $z_{i,t}$.
 
 
 
-At the beginning of each period $t$, the innovation variance realizes, while the productivity innovation and thus productivity have not yet realized. The firm chooses borrowing $b^f_{i,t}$ from households to maximize its lifetiem value. Borrowing is used to finance labor costs, investment costs, and the costs of intermediate inputs. Firms inherit the depreciated and post-liquidation physical capital from the previous period $(1-\delta)\tilde{k}_{i,t}$. Investment $i_{i,t}$ is simultaneously chosen at this stage so that $k_{i,t} = (1-\delta) \tilde{k}_{i,t} + i_{i,t}$.
+At the beginning of each period $t$, the innovation variance is realized, but the productivity innovation and productivity are not yet realized. At this stage, firm $i$ chooses borrowing $b^f_{i,t}$ from households to maximize its lifetime value. Borrowing finances labor costs, investment costs, and intermediate input costs. The firm inherits depreciated and post-liquidation physical capital from the previous period, $(1-\delta)\tilde{k}_{i,t}$, and simultaneously chooses investment $i_{i,t}$ so that $k_{i,t} = (1-\delta) \tilde{k}_{i,t} + i_{i,t}$.
 
-After productivity realizes, prices are flexible to clear the goods market. Given the borrowing and investment amount chosen in the first stage, firms choose labor demand $n_{i,t}$ and intermediate inputs $x_{i1,t},\ldots,x_{iN,t}$.
+After productivity is realized, prices adjust flexibly to clear goods markets. Given the borrowing and investment chosen in the first stage, firms choose labor demand $n_{i,t}$ and intermediate inputs $x_{i1,t},\ldots,x_{iN,t}$.
 
 Goods-market clearing in industry $i$ is
 \begin{align}\label{eq:goods_market_clearing}
@@ -162,27 +167,27 @@ Goods-market clearing in industry $i$ is
     =
     c_{i,t}+\sum_{j=1}^{N}x_{ji,t}.
 \end{align}
-Therefore, after sales are realized, the firm earns nominal revenue $p_{i,t} y_{i,t}$, subject to a proportional revenue tax $\tau_{i,t}$. Here we assume that revenue is observable and that creditors have seniority over revenue and pledgeable assets.
+After sales are realized, firm $i$ earns nominal revenue $p_{i,t} y_{i,t}$, subject to a proportional revenue tax $\tau_{i,t}$. Revenue is observable, and creditors have seniority over revenue and pledgeable assets.
 
-The firm repays borrowing $b^f_{i,t}$ at the interest rate $r_{i,t}$, where $r_{i,t}$ is the sector-specific interest rate that clears the debt market. Default occurs if the firm does not have sufficient enforceable resources. There will be three cases:
+The firm repays borrowing $b^f_{i,t}$ at the interest rate $r_{i,t}$, where $r_{i,t}$ is the sector-specific interest rate that clears the debt market. Default occurs when the firm lacks sufficient enforceable resources. Three cases can arise:
 \begin{enumerate}
-    \item Firm's revenue is sufficient for repayment. Then the firm does not default and will rebate the remaining profit to households. Define the set of productivity that will generate this case as $\Xi^1_{i,t}$:
+    \item The firm's revenue is sufficient for repayment. The firm does not default and rebates the remaining profit to households. The set of productivity realizations that generates this case is $\Xi^1_{i,t}$:
     \begin{align*}
         \Xi^1_{i,t} &:= \left\{z_{i,t}: (1-\tau_{i,t})p_{i,t} y_{i,t} \geq (1+r_{i,t})b^f_{i,t}\right\}.
     \end{align*}
-    \item Firm's revenue is insufficient for repayment. Then the firm will liquidate some of the physical capital $k_{i,t}$. If the liquidated capital is enough to repay, then the firm earns zero profit and will carry on production with the remaining proportion $\xi_{i,t} k_{i,t}$. Define the set of productivity that will generate this case as $\Xi^2_{i,t}$:
+    \item The firm's revenue is insufficient for repayment, so the firm liquidates part of its physical capital $k_{i,t}$. If the liquidated capital is enough to repay, the firm earns zero profit and continues production with the remaining capital, $\xi_{i,t} k_{i,t}$. The set of productivity realizations that generates this case is $\Xi^2_{i,t}$:
     \begin{align*}
         \Xi^2_{i,t} &:= \left\{z_{i,t}: (1+r_{i,t})b^f_{i,t} > (1-\tau_{i,t})p_{i,t} y_{i,t} \geq (1+r_{i,t})b^f_{i,t} - p_{K,t} k_{i,t}\right\}.
     \end{align*}
-    \item Firm's revenue is insufficient for repayment, and the liquidated capital is still not enough to repay. Then the firm will carry on production with zero inherited capital. In the next period, the firm need to use the working capital for investment and capital accumulation. Define the set of productivity that will generate this case as $\Xi^3_{i,t}$:
+    \item The firm's revenue is insufficient for repayment, and full liquidation of capital is still not enough to repay. The firm then continues production with zero inherited capital. In the next period, it must use working capital for investment and capital accumulation. The set of productivity realizations that generates this case is $\Xi^3_{i,t}$:
     \begin{align*}
         \Xi^3_{i,t} &:= \left\{z_{i,t}: (1-\tau_{i,t})p_{i,t} y_{i,t} + p_{K,t} k_{i,t} < (1+r_{i,t})b^f_{i,t}\right\}.
     \end{align*}
 \end{enumerate}
 
-In summary, firms make decisions in two stages. After the innovation variances are realized but before productivity is realized, firm $i$ chooses borrowing $b^f_{i,t}$ and investment $i_{i,t}$. Its first-stage problem is
+In summary, firms make decisions in two stages. After innovation variances are realized but before productivity is realized, firm $i$ chooses borrowing $b^f_{i,t}$ and investment $i_{i,t}$. Its first-stage problem is
 \begin{align}\label{eq:firm_first_stage_decision}
-    J
+    \mathcal{J}
     \left(\tilde{k}_{i,t}; \boldsymbol\sigma_t\right)
     =
     \max_{b^f_{i,t}, i_{i,t}}
@@ -191,10 +196,10 @@ In summary, firms make decisions in two stages. After the innovation variances a
             d_{i,t}
             +
             \mathcal{M}_{t,t+1}
-            J\left(\tilde{k}_{i,t+1}; \boldsymbol\sigma_{t+1}\right)
+            \mathcal{J}\left(\tilde{k}_{i,t+1}; \boldsymbol\sigma_{t+1}\right)
     \Bigg],
 \end{align}
-where $\tilde{k}_{i,t} \equiv \xi_{i,t-1}k_{i,t-1}$ is the inherited capital from $t-1$ to $t$. The problem is subject to the capital LoM \eqref{eq:capital_accumulation} and the working capital constraint $b^f_{i,t} \geq w_t n_{i,t} + \sum_{j=1}^{N} p_{j,t} x_{ij,t} + p_{K,t} i_{i,t}$. Here $\mathbb{E}_{i,t}$ denotes the expectation conditional on the information available after the innovation variances are realized but before productivity is realized. $d_{i,t}$ denotes the state-contingent maximized equity payout of the firm after productivity is realized, defined by
+where $\tilde{k}_{i,t} \equiv \xi_{i,t-1}k_{i,t-1}$ is inherited capital from $t-1$ to $t$. The problem is subject to the law of motion for capital in \eqref{eq:capital_accumulation} and the working capital constraint $b^f_{i,t} \geq w_t n_{i,t} + \sum_{j=1}^{N} p_{j,t} x_{ij,t} + p_{K,t} i_{i,t}$. Here $\mathbb{E}_{i,t}$ denotes the expectation conditional on information available after innovation variances are realized but before productivity is realized. The variable $d_{i,t}$ denotes the firm's state-contingent maximized equity payout after productivity is realized:
 \begin{align*}
     d_{i,t}
     =
@@ -205,9 +210,9 @@ where $\tilde{k}_{i,t} \equiv \xi_{i,t-1}k_{i,t-1}$ is the inherited capital fro
         (1+r_{i,t})b^f_{i,t}
     \right\},
 \end{align*}
-whose realized value is determined in a sate-contingent manner in the second stage.
+where the realized value is determined in the second stage.
 
-In the second stage, the firm chooses inputs after productivity is realized:
+In the second stage, after productivity is realized, the firm chooses inputs:
 \begin{align}\label{eq:firm_second_stage_decision}
     \min_{n_{i,t},\{x_{ij,t}\}_{j=1}^{N}}
     w_t n_{i,t}
@@ -230,7 +235,7 @@ subject to
         x_{ij,t}^{\alpha_{ij}}
     \right]^{1-a_i},
 \end{align*}
-where $w_t$ is the nominal wage, $p_{j,t}$ is the price of good $j$, $p_{K,t}$ is the price of physical capital. We can get the following expression in log form for the marginal cost:
+where $w_t$ is the nominal wage, $p_{j,t}$ is the price of good $j$, and $p_{K,t}$ is the price of physical capital. This yields the following log marginal cost:
 \begin{align}\label{eq:marginal_cost}
     \text{mc}_{i,t} = \frac{1}{1-a_i\eta_i} \left[(1-\eta_i)a_i \text{w}_t + (1-a_i)\sum_{j=1}^N \alpha_{ij} \text{p}_{j,t} - \eta_i a_i \text{k}_{i,t} - \text{z}_{i,t}\right],
 \end{align}
@@ -241,15 +246,16 @@ where the normalization factor is set as
 
 For the first-stage problem, the firm's FOCs are
 \begin{align*}
-    [b^f_{i,t}]: \quad &\mathbb{E}_{i,t}\left[\lambda^{f}_{i,t} - (1+r_{i,t})\mathbbm{1}_{\Xi^1_{i,t}} - \mathcal{M}_{t,t+1} \frac{1+r_{i,t}}{p_{K,t}} J'(\tilde{k}_{i,t+1})\mathbbm{1}_{\Xi^2_{i,t}} \right] = 0, \\
-    [i_{i,t}]: \quad &\mathbb{E}_{i,t}\left[\lambda^{f}_{i,t}p_{K,t} - \mathcal{M}_{t,t+1} J'(\tilde{k}_{i, t+1})\left(\mathbbm{1}_{\Xi^1_{i,t} \cup \Xi^2_{i,t}} + \eta_i a_i(1-\tau_{i,t+1})p_{i,t+1}\frac{y_{i,t+1}/k_{i,t+1}}{p_{K,t+1}}\mathbbm{1}_{\Xi^2_{i,t}}\right)\right] = 0,
+    [b^f_{i,t}]: \quad &\mathbb{E}_{i,t}\left[\lambda^{f}_{i,t} - (1+r_{i,t})\mathbbm{1}_{\Xi^1_{i,t}} - \mathcal{M}_{t,t+1} \frac{1+r_{i,t}}{p_{K,t}} \mathcal{J}'(\tilde{k}_{i,t+1})\mathbbm{1}_{\Xi^2_{i,t}} \right] = 0, \\
+    [i_{i,t}]: \quad &\mathbb{E}_{i,t}\bigg[\lambda^{f}_{i,t}p_{K,t} \\
+    &\qquad - \mathcal{M}_{t,t+1} \mathcal{J}'(\tilde{k}_{i, t+1})\left(\mathbbm{1}_{\Xi^1_{i,t} \cup \Xi^2_{i,t}} + \eta_i a_i(1-\tau_{i,t+1})p_{i,t+1}\frac{y_{i,t+1}/k_{i,t+1}}{p_{K,t+1}}\mathbbm{1}_{\Xi^2_{i,t}}\right)\bigg] = 0,
 \end{align*}
-where $\mathbbm{1}$ denotes the indicator function of the sets $\Xi^1_{i,t}, \Xi^2_{i,t}, \Xi^3_{i,t}$. 
+where $\mathbbm{1}$ denotes the indicator function for the sets $\Xi^1_{i,t}, \Xi^2_{i,t}, \Xi^3_{i,t}$. 
 
-The Envelope condition is
+The envelope condition is
 \begin{align*}
-    J'(\tilde{k}_{i,t}) = (1-\delta) &\mathbb{E}_{i,t}\bigg[\eta_i a_i (1-\tau_{i,t})p_{i,t}\frac{y_{i,t}}{k_{i,t}}\mathbbm{1}_{\Xi^1_{i,t}} \\
-    &+ \mathcal{M}_{t,t+1} J'(\tilde{k}_{i, t+1})\left(\mathbbm{1}_{\Xi^1_{i,t} \cup \Xi^2_{i,t}} + \eta_i a_i(1-\tau_{i,t})p_{i,t}\frac{y_{i,t}/k_{i,t}}{p_{K,t}}\mathbbm{1}_{\Xi^2_{i,t}}\right)\bigg].
+    \mathcal{J}'(\tilde{k}_{i,t}) = (1-\delta) &\mathbb{E}_{i,t}\bigg[\eta_i a_i (1-\tau_{i,t})p_{i,t}\frac{y_{i,t}}{k_{i,t}}\mathbbm{1}_{\Xi^1_{i,t}} \\
+    &+ \mathcal{M}_{t,t+1} \mathcal{J}'(\tilde{k}_{i, t+1})\left(\mathbbm{1}_{\Xi^1_{i,t} \cup \Xi^2_{i,t}} + \eta_i a_i(1-\tau_{i,t})p_{i,t}\frac{y_{i,t}/k_{i,t}}{p_{K,t}}\mathbbm{1}_{\Xi^2_{i,t}}\right)\bigg].
 \end{align*}
 Equivalently, let $f_{i,t}(z)$ denote the conditional density of $z_{i,t}$ given the information available at the first stage. Since $\log z_{i,t}=\rho_i^z\log z_{i,t-1}+\sigma_{i,t}\epsilon^z_{i,t}$ and $\epsilon^z_{i,t}\sim\mathcal N(0,1)$,
 \begin{align*}
@@ -270,7 +276,7 @@ where $\phi(\cdot)$ is the standard normal density. Define the conditional proba
     \qquad
     m=1,2,3,
 \end{align*}
-and $\pi^{12}_{i,t}:=\pi^1_{i,t}+\pi^2_{i,t}$. Define the conditional expectation operator $\mathbb{E}^m_{i,t}$ to denote the expectation conditional on state $\Xi^m_{i,t}$. Then the first-order conditions can be written explicitly as
+and $\pi^{12}_{i,t}:=\pi^1_{i,t}+\pi^2_{i,t}$. Let $\mathbb{E}^m_{i,t}$ denote the expectation conditional on state $\Xi^m_{i,t}$. The first-order conditions can then be written explicitly as
 \begin{align}
     [b^f_{i,t}]: \quad
     &\mathbb{E}_{i,t}\left[\lambda^f_{i,t}\right]
@@ -281,7 +287,7 @@ and $\pi^{12}_{i,t}:=\pi^1_{i,t}+\pi^2_{i,t}$. Define the conditional expectatio
     \pi^2_{i,t}
     \mathbb{E}^{2}_{i,t}\left[
         \mathcal M_{t,t+1}
-        J'(k_{i,t+1})
+        \mathcal{J}'(\tilde{k}_{i,t+1})
     \right]
     =
     0, \label{eq:first_stage_foc_b}
@@ -292,29 +298,29 @@ and $\pi^{12}_{i,t}:=\pi^1_{i,t}+\pi^2_{i,t}$. Define the conditional expectatio
     \pi^{12}_{i,t}
     \mathbb{E}^{12}_{i,t}\left[
         \mathcal M_{t,t+1}
-        J'(\tilde{k}_{i,t+1})
+        \mathcal{J}'(\tilde{k}_{i,t+1})
     \right]\notag \\
     &\qquad \qquad -
     \pi^{2}_{i,t}
     \mathbb{E}^2_{i,t} \left[
-        \mathcal{M}_{t,t+1}J'(\tilde{k}_{i,t+1})
+        \mathcal{M}_{t,t+1}\mathcal{J}'(\tilde{k}_{i,t+1})
         \frac{\partial [(1-\tau_{i,t+1})p_{i,t+1} y_{i,t+1}]/\partial k_{i,t+1}
         }{
             p_{K,t}
         }
     \right] = 0. \label{eq:first_stage_foc_i}
 \end{align}
-We briefly discuss the intuitions of the two FOCs. For the borrowing condition, $\mathbb{E}_{i,t}\left[\lambda^f_{i,t}\right]$ is the marginal value of relaxing the working capital constraint by 1 unit, that is, one more unit of borrowing. In $\Xi^1_{i,t}$, the firm just needs to repay the interest. In $\Xi^2_{i,t}$, the firm also needs to consider the marginal value of firm due to liquidation. In $\Xi^3_{i,t}$, there is no marginal liquidation cost. For the investment condition, we consider the effect of decreasing one unit of investment, that is, $p_{K,t}$ units of borrowing. Then the investment will anyways be carried on to the next period and affect the continuation value in $\Xi^1_{i,t}$ and $\Xi^2_{i,t}$. In $\Xi^3_{i,t}$, all investments are liquidated, so the continuation value is not affected. Besides, in $\Xi^2_{i,t}$, this decrease in investment will affect the profitability in the next period via the amount of carried-on capital.
+The two first-order conditions have intuitive interpretations. In the borrowing condition, $\mathbb{E}_{i,t}\left[\lambda^f_{i,t}\right]$ is the marginal value of relaxing the working capital constraint by one unit, or equivalently of raising borrowing by one unit. In state $\Xi^1_{i,t}$, the firm only repays the promised debt. In state $\Xi^2_{i,t}$, the firm must also account for the marginal value loss associated with liquidation. In state $\Xi^3_{i,t}$, there is no marginal liquidation cost. For the investment condition, consider reducing investment by one unit, which frees $p_{K,t}$ units of borrowing capacity. Investment carried into the next period affects continuation value in states $\Xi^1_{i,t}$ and $\Xi^2_{i,t}$. In state $\Xi^3_{i,t}$, all investment is liquidated, so continuation value is unaffected. In state $\Xi^2_{i,t}$, the reduction in investment also affects next-period profitability through the amount of capital carried forward.
 
-Combining the FOC of $i_{i,t}$ with the Envelope condition, we have
+Combining the first-order condition for $i_{i,t}$ with the envelope condition gives
 \begin{align}\label{eq:first_stage_envelope}
-    J'(\tilde{k}_{i,t}) = (1-\delta) \left[\pi^1_{i,t}\mathbb{E}^1_{i,t} \left[\frac{\partial [(1-\tau_{i,t})p_{i,t} y_{i,t}]}{\partial k_{i,t}}\right] + \mathbb{E}_{i,t} \left[\lambda^f_{i,t} p_{K,t}\right]\right].
+    \mathcal{J}'(\tilde{k}_{i,t}) = (1-\delta) \left[\pi^1_{i,t}\mathbb{E}^1_{i,t} \left[\frac{\partial [(1-\tau_{i,t})p_{i,t} y_{i,t}]}{\partial k_{i,t}}\right] + \mathbb{E}_{i,t} \left[\lambda^f_{i,t} p_{K,t}\right]\right].
 \end{align}
-The LHS is the marginal value of one more unit of carried-on physical capital from period $t-1$. It will first be depreciated. With this increase in physical capital, firms can relax the working capital constraint for $(1-\delta)p_{K,t}$ unit in investment. Also, in case $\Xi^1_{i,t}$, firm can earn more profit. 
+The left-hand side is the marginal value of one additional unit of physical capital carried from period $t-1$, net of depreciation. Additional physical capital relaxes the working capital constraint by $(1-\delta)p_{K,t}$ units of investment. In state $\Xi^1_{i,t}$, it also raises firm profits.
 
 \subsubsection{Households}
 
-There are representative households with unit mass supplying labor and credit to firms and choosing consumption quantities $\{c_{i,t}\}_{i=1}^{N}$. Household utility is given by
+There is a unit mass of representative households that supply labor and credit to firms and choose consumption quantities $\{c_{i,t}\}_{i=1}^{N}$. Household utility is
 \begin{align}\label{eq:hh_utility}
     U(C_t,N_t)
     =
@@ -322,7 +328,7 @@ There are representative households with unit mass supplying labor and credit to
     -
     \chi\frac{N_t^{1+\varphi}}{1+\varphi},
 \end{align}
-where consumption is an aggregator of consumption goods,
+where consumption aggregates sectoral goods according to
 \begin{align*}
     C_t
     :=
@@ -331,7 +337,7 @@ where consumption is an aggregator of consumption goods,
         \frac{c_{i,t}}{\theta_i}
     \right)^{\theta_i},
 \end{align*}
-where $\theta_i>0$ and $\sum_{i=1}^N \theta_i=1$. $N_t=\sum_{i=1}^{N}n_{i,t}$ is total labor supply.
+with $\theta_i>0$ and $\sum_{i=1}^N \theta_i=1$. Total labor supply is $N_t=\sum_{i=1}^{N}n_{i,t}$.
 
 The household budget constraint is
 \begin{align}\label{eq:hh_budget_constraint}
@@ -344,7 +350,7 @@ The household budget constraint is
         p_{i,t}c_{i,t}
     +\sum_{i=1}^{N}b^h_{i,t+1} +\sum_{i=1}^N e_{i,t+1}  q_{i,t}.
 \end{align}
-Here $b^h_{i,t}$ denotes the household's holdings of firm $i$'s debt, $e_{i,t} \in [0,1]$ is the share of firm $i$'s equity holdings which, in equilibrium, is equal to 1 for all $i$'s and $t$'s, $q_{i,t}$ is the price of firm $i$'s equity, and $\tilde{r}_{i,t}$ is the realized return on firm $i$'s debt. It is defined by
+Here $b^h_{i,t}$ denotes the household's holdings of firm $i$'s debt, $e_{i,t} \in [0,1]$ is the share of firm $i$'s equity held by households, $q_{i,t}$ is the price of firm $i$'s equity, and $\tilde{r}_{i,t}$ is the realized return on firm $i$'s debt. In equilibrium, $e_{i,t}=1$ for all $i$ and $t$. The realized return is
 \begin{align}\label{eq:hh_realized_return}
     1+\tilde{r}_{i,t} \equiv
     \min\Bigg\{
@@ -357,18 +363,18 @@ Here $b^h_{i,t}$ denotes the household's holdings of firm $i$'s debt, $e_{i,t} \
         \right]}{b_{i,t}}
     \Bigg\},
 \end{align}
-where $b^f_{i,t}$ is firm $i$'s debt issuance, and, in equilibrium, the market for firm debt clears:
+where $b^f_{i,t}$ is firm $i$'s debt issuance. In equilibrium, the market for firm debt clears:
 \begin{align}\label{eq:firm_debt_market_clearing}
     b^h_{i,t}=b^f_{i,t} \equiv b_{i,t}.
 \end{align}
-Here $D_t:= \sum_{i=1}^N d_{i,t}$ is total nominal profit from firms, and $T_t$ is a lump-sum government transfer. Total consumption expenditure is
+Here $D_t:= \sum_{i=1}^N d_{i,t}$ is total nominal firm profit, and $T_t$ is a lump-sum government transfer. Total consumption expenditure is
 \begin{align*}
     P_tC_t
     :=
     \sum_{i=1}^{N}
         p_{i,t}c_{i,t},
 \end{align*}
-where $P_t$ is the aggregate price index. Following \cite{herskovicNetworksProductionAsset2018}, we normalize the prices such that the consumption aggregator becomes the numeraire, that is, $P_t=1$.
+where $P_t$ is the aggregate price index. Following \cite{herskovicNetworksProductionAsset2018}, we normalize prices so that the consumption aggregator is the numeraire, that is, $P_t=1$.
 
 In summary, the household problem is
 \begin{align}\label{eq:hh_problem}
@@ -376,7 +382,7 @@ In summary, the household problem is
 \end{align}
 subject to the budget constraint \eqref{eq:hh_budget_constraint}.
 
-As in the standard literature, the FOC of $c_{i,t}$ gives the consumption demand and price index:
+As in the standard literature, the first-order condition for $c_{i,t}$ gives consumption demand and the price index:
 \begin{align*}
     c_{i,t}
     =
@@ -386,15 +392,15 @@ As in the standard literature, the FOC of $c_{i,t}$ gives the consumption demand
     =
     \prod_{i=1}^N p_{i,t}^{\theta_i}.
 \end{align*}
-The labour supply is given by the FOC of $N_t$:
+Labor supply follows from the first-order condition for $N_t$:
 \begin{align*}
     w_t = \chi C_t N_t^{\varphi}.
 \end{align*}
-Using forward substitution to the FOC of $e_{i,t+1}$, we get the equity pricing equation:
+Forward substitution in the first-order condition for $e_{i,t+1}$ gives the equity pricing equation:
 \begin{align*}
     \frac{q_{i,t}}{C_t} = \mathbb{E}_t \sum_{j=1}^{+\infty} \beta^j \frac{d_{i,t+j}}{C_{t+j}}.
 \end{align*}
-As a result, the SDF will have the following analytical form:
+The stochastic discount factor therefore has the following analytical form:
 \begin{align*}
     \mathcal{M}_{t, t+j} = \beta^j \frac{C_t}{C_{t+j}}.
 \end{align*}
@@ -409,10 +415,10 @@ The credit-market object is the promised rate on risky firm debt. Firms choose d
         (1+\tilde r_{i,t+1})
     \right].
 \end{align}
-Thus the household does not choose the firm's borrowing directly. Instead, the spread on risky debt adjusts so that the value of the state-contingent repayment equals the unit cost of lending.
+Thus households do not choose firms' borrowing directly. Instead, the spread on risky debt adjusts so that the value of state-contingent repayment equals the unit cost of lending.
 
 \subsubsection{Government}
-There is a government that collects taxes or provides subsidies to firms and rebates the resulting revenue to households as a lump-sum transfer:
+The government collects taxes from firms, or provides subsidies to them, and rebates the resulting revenue to households as a lump-sum transfer:
 \begin{align*}
     T_t
     \equiv
