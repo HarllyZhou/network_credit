@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" width="760" role="img" aria-label="Consensus logic chain">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#2c2c2c"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 15px; fill: #1a1a1a; }
+      .box { fill: #fafafa; stroke: #2c2c2c; stroke-width: 1.4; }
+      .risk { fill: #fff8ec; }
+      .neg { fill: #f8ecec; stroke: #8a3a3a; }
+      .pos { fill: #eef6ef; stroke: #2f6b3a; }
+      .policy { fill: #eef2f8; stroke: #243e6a; }
+      .line { fill: none; stroke: #2c2c2c; stroke-width: 1.4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="box" x="130" y="16" width="500" height="48" rx="6"/>
+  <text x="380" y="46" text-anchor="middle">Different sectoral credit conditions</text>
+
+  <path class="line" d="M 380 64 L 380 96"/>
+
+  <rect class="box" x="130" y="100" width="500" height="48" rx="6"/>
+  <text x="380" y="130" text-anchor="middle">Downstream sectors face different supply-chain risk</text>
+
+  <path class="line" d="M 380 148 L 380 180"/>
+
+  <rect class="box risk" x="130" y="184" width="500" height="48" rx="6"/>
+  <text x="380" y="214" text-anchor="middle">Tradeoff: higher supply-chain risk, higher profit</text>
+
+  <path class="line" d="M 380 232 L 380 264"/>
+
+  <rect class="box" x="130" y="268" width="500" height="48" rx="6"/>
+  <text x="380" y="298" text-anchor="middle">Dynamic, endogenous technology choice</text>
+
+  <path class="line" d="M 380 316 L 380 348"/>
+
+  <rect class="box" x="130" y="352" width="500" height="48" rx="6"/>
+  <text x="380" y="382" text-anchor="middle">Endogenous production network</text>
+
+  <path class="line" d="M 380 400 L 380 432"/>
+
+  <rect class="box" x="130" y="436" width="500" height="48" rx="6"/>
+  <text x="380" y="466" text-anchor="middle">Financing conditions persist</text>
+
+  <path class="line" d="M 380 484 L 380 508 L 190 508 L 190 536"/>
+  <path class="line" d="M 380 508 L 570 508 L 570 536"/>
+
+  <rect class="box" x="30" y="540" width="320" height="48" rx="6"/>
+  <text x="190" y="570" text-anchor="middle">Network concentrates on a few sectors</text>
+
+  <rect class="box" x="410" y="540" width="320" height="48" rx="6"/>
+  <text x="570" y="570" text-anchor="middle">Network moves away from those sectors</text>
+
+  <path class="line" d="M 190 588 L 190 620"/>
+  <path class="line" d="M 570 588 L 570 620"/>
+
+  <rect class="box neg" x="30" y="624" width="320" height="48" rx="6"/>
+  <text x="190" y="654" text-anchor="middle">Fragility, a negative externality</text>
+
+  <rect class="box pos" x="410" y="624" width="320" height="48" rx="6"/>
+  <text x="570" y="654" text-anchor="middle">Diversity, a positive externality</text>
+
+  <path class="line" d="M 190 672 L 190 696"/>
+  <path class="line" d="M 570 672 L 570 696"/>
+  <path d="M 190 696 L 570 696" fill="none" stroke="#2c2c2c" stroke-width="1.4"/>
+  <path class="line" d="M 380 696 L 380 724"/>
+
+  <rect class="box" x="130" y="728" width="500" height="48" rx="6"/>
+  <text x="380" y="758" text-anchor="middle">Firms ignore both when maximizing profit</text>
+
+  <path class="line" d="M 380 776 L 380 808"/>
+
+  <rect class="box policy" x="130" y="812" width="500" height="48" rx="6"/>
+  <text x="380" y="842" text-anchor="middle">Industrial policy induces a better equilibrium</text>
+</svg>
